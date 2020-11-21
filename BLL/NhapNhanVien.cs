@@ -13,32 +13,32 @@ namespace THHHMinhHieu.Nhap
         {
             arrayList.Add(new NhanVien());
         }
-        public void pass()
+        public static string pass()
         {
             Console.WriteLine("Nhập pass: ");
             string pass = Console.ReadLine();
             return pass;
 
         }
-        public string ngayvaolamviec()
+        public static string ngayvaolamviec()
         {
             Console.WriteLine("Nhập ngày vào làm việc: ");
             string ngayvao = Console.ReadLine();
             return ngayvao;
         }
-        public string ngaysinh()
+        public static string ngaysinh()
         {
             Console.WriteLine("Nhập ngày sinh: ");
             string ngaysinh = Console.ReadLine();
             return ngaysinh;
         }
-        public string tennv()
+        public static string tennv()
         {
             Console.WriteLine("Nhập tên nhân viên: ");
             string tennv = Console.ReadLine();
             return tennv;
         }
-        public int manv(ArrayList arrayList)
+        public static int manv(ArrayList arrayList)
         {
             int manv = arrayList.Count;
             return manv + 1000;

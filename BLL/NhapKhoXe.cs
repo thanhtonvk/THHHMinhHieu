@@ -9,11 +9,11 @@ namespace THHHMinhHieu.Nhap
     class NhapKhoXe
     {
         //int maxe, string tenxe, string maloai, int slnhapve, int slhienco
-        public void NhapThongTinKhoXe(ArrayList arrayList)
+        public static void NhapThongTinKhoXe(ArrayList arrayList)
         {
             arrayList.Add(new KhoXe(maxe(arrayList),tenxe(),maloai(),slnhapve(),slhienco()));
         }
-        public int slhienco()
+        public static int slhienco()
         {
             int slhienco;
             while (true)
@@ -24,7 +24,7 @@ namespace THHHMinhHieu.Nhap
             }
             return slhienco;
         }
-        public int slnhapve()
+        public static int slnhapve()
         {
             int slnhapve;
             while (true)
@@ -35,7 +35,7 @@ namespace THHHMinhHieu.Nhap
             }
             return slnhapve;
         }
-        public string maloai()
+        public static string maloai()
         {
             string maloai;
             while (true)
@@ -46,12 +46,12 @@ namespace THHHMinhHieu.Nhap
             }
             return maloai;
         }
-        public int maxe(ArrayList arrayList)
+        public static int maxe(ArrayList arrayList)
         {
             int maxe = arrayList.Count;
             return maxe;
         }
-        public string tenxe()
+        public static string tenxe()
         {
             string tenxe;
             while (true)

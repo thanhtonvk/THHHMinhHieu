@@ -12,7 +12,7 @@ namespace THHHMinhHieu.Nhap
             arrayList.Add(new GiaBan(magiachothue(arrayList),maxe(),giachothue(),donvitinh(),ngayad(),ngaythoiad()));
         }
         //int magiachothue,int maxe,double giachothue,string donvitinh,string ngayad,string ngaythoiad
-        public string ngayad()
+        public static string ngayad()
         {
             string ngayad;
             while (true)
@@ -23,7 +23,7 @@ namespace THHHMinhHieu.Nhap
             }
             return ngayad;
         }
-        public string ngaythoiad()
+        public static string ngaythoiad()
         {
             string ngaythoiad;
             while (true)
@@ -34,7 +34,7 @@ namespace THHHMinhHieu.Nhap
             }
             return ngaythoiad;
         }
-        public string donvitinh()
+        public static string donvitinh()
         {
             string donvitinh;
             while (true)
@@ -45,12 +45,12 @@ namespace THHHMinhHieu.Nhap
             }
             return donvitinh;
         }
-        public int magiachothue(ArrayList arrayList)
+        public static int magiachothue(ArrayList arrayList)
         {
             int magia = arrayList.Count;
             return magia + 1000;
         }
-        public int maxe()
+        public static int maxe()
         {
             int maxe;
             while (true)
@@ -61,7 +61,7 @@ namespace THHHMinhHieu.Nhap
             }
             return maxe;
         }
-        public double giachothue()
+        public static double giachothue()
         {
             double gia;
             while (true)

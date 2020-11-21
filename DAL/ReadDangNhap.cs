@@ -28,7 +28,7 @@ namespace THHHMinhHieu.DocGhiFile
                 Console.WriteLine(e.Message);
             }
         }
-        public void SignUp()
+        public static void SignUp()
         {
             using (StreamWriter streamWriter = new StreamWriter(filepath))
             {

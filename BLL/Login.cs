@@ -11,7 +11,7 @@ namespace THHHMinhHieu.ChucNang
 {
     class Login
     {
-        public bool DangNhap(ArrayList arrayList)
+        public static bool DangNhap(ArrayList arrayList)
         {
             bool kt = false;
             ReadDangNhap readDangNhap = new ReadDangNhap();
@@ -22,7 +22,6 @@ namespace THHHMinhHieu.ChucNang
                     kt = true;
                 }
             }
-
             return kt;
         }
         private string UserName()

@@ -13,54 +13,54 @@ namespace THHHMinhHieu.Nhap
         {
             arrayList.Add(new NghiepVu(mahdn(arrayList),tenhdn(),tennvgiao(),mahd(),tenxechothue(),soluong(),maxechothue(),tongtien(),giachothue()));
         }
-        public double giachothue()
+        public static double giachothue()
         {
             Console.WriteLine("Nhập giá cho thuê: ");
             double gia = double.Parse(Console.ReadLine());
             return gia;
         }
-        public int tongtien()
+        public static int tongtien()
         {
             Console.WriteLine("Nhập tổng tiền: ");
             int tongtien = int.Parse(Console.ReadLine());
             return tongtien;
         }
-        public int maxechothue()
+        public  static int maxechothue()
         {
             Console.WriteLine("Nhập mã xe cho thuê: ");
             int maxechothue = int.Parse(Console.ReadLine());
             return maxechothue;
         }
-        public int soluong()
+        public static int soluong()
         {
             Console.WriteLine("Nhập số lượng: ");
             int sl = int.Parse(Console.ReadLine());
             return sl;
         }
-        public string tenxechothue()
+        public static string tenxechothue()
         {
             Console.WriteLine("Nhập tên xe cho thuê: ");
             string tenxe = Console.ReadLine();
             return tenxe;
         }
-        public string mahd()
+        public static string mahd()
         {
             Console.WriteLine("Nhập mã hóa đơn : ");
             string mahd = Console.ReadLine();
             return mahd;
         }
-        public string tennvgiao()
+        public static string tennvgiao()
         {
             Console.WriteLine("Nhập tên nhân viên giao: ");
             string ten = Console.ReadLine();
             return ten;
         }
-        public int mahdn(ArrayList arrayList)
+        public static int mahdn(ArrayList arrayList)
         {
             int mahdn = arrayList.Count;
             return mahdn + 1000;
         }
-        public string tenhdn()
+        public static string tenhdn()
         {
             Console.WriteLine("Nhập tên hóa đơn nhập: ");
             string tenhdn = Console.ReadLine();

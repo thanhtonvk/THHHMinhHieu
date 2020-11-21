@@ -20,7 +20,7 @@ namespace THHHMinhHieu.Nhap
             return mactcc + 1000;
            
         }
-        public string tenctcc()
+        public static string tenctcc()
         {
             string ten;
             while (true)
@@ -32,7 +32,7 @@ namespace THHHMinhHieu.Nhap
             }
             return ten;
         }
-        public string diachi()
+        public static string diachi()
         {
             string diachi;
             while (true)
@@ -44,7 +44,7 @@ namespace THHHMinhHieu.Nhap
             }
             return diachi;
         }
-        public string sdt()
+        public static string sdt()
         {
             string sdt;
             while (true)
