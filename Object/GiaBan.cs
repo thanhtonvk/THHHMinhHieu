@@ -12,6 +12,11 @@ namespace THHHMinhHieu.Object
         private string donvitinh;
         private string ngayad;
         private string ngaythoiad;
+        override
+            public string ToString()
+        {
+            return magiachothue + "#" + maxe + "#" + giachothue + "#" + donvitinh + "#" + ngayad + "#" + ngaythoiad;
+        }
         public GiaBan()
         {
 

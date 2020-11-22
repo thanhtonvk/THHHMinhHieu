@@ -3,16 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using THHHMinhHieu.Object;
 
-namespace THHHMinhHieu.DocGhiFile
+namespace THHHMinhHieu.DAL
 {
-    class DocGhiFileNghiepVu
+    class DangNhap_DAL
     {
-        static string filepath = "nghiepvu.txt";
-        public void DocFile(ArrayList arrayList)
+        static string filepath = "dangnhap.txt";
+        public static void DocFile(ArrayList arrayList)
         {
-            //int mahdn,string tenhdn,string tennvgiao,string mahd,string tenxechothue,int soluong,int maxechothue,int tongtien,double giachothue
             try
             {
                 using (StreamReader streamReader = new StreamReader(filepath))
@@ -20,7 +18,7 @@ namespace THHHMinhHieu.DocGhiFile
                     string line;
                     while ((line = streamReader.ReadLine()) != null)
                     {
-                        arrayList.Add(new NghiepVu(int.Parse(line.Split("#")[0]), line.Split("#")[1], line.Split("#")[2], line.Split("#")[3], line.Split("#")[4],int.Parse(line.Split("#")[5]),int.Parse(line.Split("#")[6]),int.Parse(line.Split("#")[7]),double.Parse(line.Split("#")[7])));
+                        arrayList.Add(new DangNhap(line.Split("#")[0],line.Split("#")[1]));
                     }
                 }
             }
@@ -29,15 +27,15 @@ namespace THHHMinhHieu.DocGhiFile
                 Console.WriteLine(e.Message);
             }
         }
-        public void GhiFile(ArrayList arrayList)
+        public static void GhiFile(ArrayList arrayList)
         {
             try
             {
                 using (StreamWriter streamWriter = new StreamWriter(filepath))
                 {
-                    foreach (NghiepVu nghiepVu in arrayList)
+                    foreach (DangNhap dangNhap in arrayList)
                     {
-                        streamWriter.WriteLine(nghiepVu.ToString());
+                        streamWriter.WriteLine(dangNhap.ToString());
                     }
                 }
             }

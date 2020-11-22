@@ -7,10 +7,10 @@ using THHHMinhHieu.Object;
 
 namespace THHHMinhHieu.DocGhiFile
 {
-    class DocGhiFileGiaBan
+    class KhoXe_DAL
     {
-        static string filepath = "giaban.txt";
-        public void DocFile(ArrayList arrayList)
+        static string filepath = "ctcc.txt";
+        public static void DocFile(ArrayList arrayList)
         {
             try
             {
@@ -19,7 +19,7 @@ namespace THHHMinhHieu.DocGhiFile
                     string line;
                     while ((line = streamReader.ReadLine()) != null)
                     {
-                        arrayList.Add(new GiaBan(int.Parse(line.Split("#")[0]),double.Parse(line.Split("#")[1]),line.Split("#")[2],line.Split("#")[3],line.Split("#")[3]));
+                        arrayList.Add(new KhoXe(int.Parse(line.Split("#")[0]),line.Split("#")[1],line.Split("#")[2],int.Parse(line.Split("#")[3]),int.Parse(line.Split("#")[4])));
                     }
                 }
             }
@@ -28,15 +28,16 @@ namespace THHHMinhHieu.DocGhiFile
                 Console.WriteLine(e.Message);
             }
         }
-        public void GhiFile(ArrayList arrayList)
+        public static void GhiFile(ArrayList arrayList)
         {
             try
             {
                 using (StreamWriter streamWriter = new StreamWriter(filepath))
                 {
-                    foreach (GiaBan giaBan in arrayList)
+                    foreach (KhoXe khoXe in arrayList)
                     {
-                        streamWriter.WriteLine(giaBan.ToString());
+                        streamWriter.WriteLine(khoXe
+                            .ToString());
                     }
                 }
             }

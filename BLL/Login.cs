@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
+using THHHMinhHieu.DAL;
 using THHHMinhHieu.DocGhiFile;
 using THHHMinhHieu.Object;
 
@@ -11,20 +12,29 @@ namespace THHHMinhHieu.ChucNang
 {
     class Login
     {
-        public static bool DangNhap(ArrayList arrayList)
+        public static void TaoTK(ArrayList list)
+        {
+            string tk = UserName();
+            string mk = Password();
+            list.Add(new DangNhap(tk, mk));
+            DangNhap_DAL.GhiFile(list);
+        }
+        public static bool DangNhap(ArrayList list)
         {
             bool kt = false;
-            ReadDangNhap readDangNhap = new ReadDangNhap();
-            readDangNhap.DangNhap(arrayList);
-            foreach (DangNhap dangNhap in arrayList)
+            DangNhap_DAL.DocFile(list);
+            string tk = UserName();
+            string mk = Password();
+            foreach(DangNhap dangnhap in list)
             {
-                if (dangNhap.User.Equals(UserName()) && dangNhap.Password.Equals(Password())){
+                if (tk.Equals(dangnhap.User) && mk.Equals(dangnhap.Password))
+                {
                     kt = true;
                 }
             }
             return kt;
         }
-        private string UserName()
+        public static string UserName()
         {
             string tk;
             while (true)
@@ -35,7 +45,7 @@ namespace THHHMinhHieu.ChucNang
             }
             return tk;
         }
-        private string Password()
+        public static string Password()
         {
             string pass;
             while (true)

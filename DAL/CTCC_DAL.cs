@@ -7,10 +7,10 @@ using THHHMinhHieu.Object;
 
 namespace THHHMinhHieu.DocGhiFile
 {
-    class DocGhiFileCTCC
+    class CTCC_DAL
     {
         static string filepath = "ctcc.txt";
-        public void DocFile(ArrayList arrayList)
+        public static void DocFile(ArrayList arrayList)
         {
             try
             {
@@ -28,7 +28,7 @@ namespace THHHMinhHieu.DocGhiFile
                 Console.WriteLine(e.Message);
             }
         }
-        public void GhiFile(ArrayList arrayList)
+        public static void GhiFile(ArrayList arrayList)
         {
             try
             {

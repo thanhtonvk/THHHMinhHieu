@@ -7,12 +7,12 @@ using THHHMinhHieu.Object;
 
 namespace THHHMinhHieu.DocGhiFile
 {
-    class DocGhiFileNhanVien
+    class NghiepVu_DAL
     {
-        //int manv, string tennv, string ngaysinh, string gioitinh, string ngayvaolv, string pass, string loainv
-        static string filepath = "nhanvien.txt";
-        public void DocFile(ArrayList arrayList)
+        static string filepath = "nghiepvu.txt";
+        public static void DocFile(ArrayList arrayList)
         {
+            //int mahdn,string tenhdn,string tennvgiao,string mahd,string tenxechothue,int soluong,int maxechothue,int tongtien,double giachothue
             try
             {
                 using (StreamReader streamReader = new StreamReader(filepath))
@@ -20,7 +20,7 @@ namespace THHHMinhHieu.DocGhiFile
                     string line;
                     while ((line = streamReader.ReadLine()) != null)
                     {
-                        arrayList.Add(new NhanVien(int.Parse(line.Split("#")[0]),line.Split("#")[1],line.Split("#")[2],line.Split("#")[3],line.Split("#")[4],line.Split("#")[5],line.Split("#")[6]));
+                        arrayList.Add(new NghiepVu(int.Parse(line.Split("#")[0]), line.Split("#")[1], line.Split("#")[2], line.Split("#")[3], line.Split("#")[4],int.Parse(line.Split("#")[5]),int.Parse(line.Split("#")[6]),int.Parse(line.Split("#")[7]),double.Parse(line.Split("#")[7])));
                     }
                 }
             }
@@ -29,15 +29,15 @@ namespace THHHMinhHieu.DocGhiFile
                 Console.WriteLine(e.Message);
             }
         }
-        public void GhiFile(ArrayList arrayList)
+        public static void GhiFile(ArrayList arrayList)
         {
             try
             {
                 using (StreamWriter streamWriter = new StreamWriter(filepath))
                 {
-                    foreach (NhanVien nhanVien in arrayList)
+                    foreach (NghiepVu nghiepVu in arrayList)
                     {
-                        streamWriter.WriteLine(nhanVien.ToString());
+                        streamWriter.WriteLine(nghiepVu.ToString());
                     }
                 }
             }

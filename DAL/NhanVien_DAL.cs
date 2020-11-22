@@ -7,11 +7,11 @@ using THHHMinhHieu.Object;
 
 namespace THHHMinhHieu.DocGhiFile
 {
-    class DocGhiFileTinhLuong
+    class NhanVien_DAL
     {
-        //int matl, float songaylv, double thuong, double luongcoban, double thanhtien
-        static string filepath = "tinhluong.txt";
-        public void DocFile(ArrayList arrayList)
+        //int manv, string tennv, string ngaysinh, string gioitinh, string ngayvaolv, string pass, string loainv
+        static string filepath = "nhanvien.txt";
+        public static void DocFile(ArrayList arrayList)
         {
             try
             {
@@ -20,7 +20,7 @@ namespace THHHMinhHieu.DocGhiFile
                     string line;
                     while ((line = streamReader.ReadLine()) != null)
                     {
-                        arrayList.Add(new TinhLuong(int.Parse(line.Split("#")[0]),float.Parse(line.Split("#")[1]),double.Parse(line.Split("#")[2]),double.Parse(line.Split("#")[3]),double.Parse(line.Split("#")[4])));
+                        arrayList.Add(new NhanVien(int.Parse(line.Split("#")[0]),line.Split("#")[1],line.Split("#")[2],line.Split("#")[3],line.Split("#")[4],line.Split("#")[5],line.Split("#")[6]));
                     }
                 }
             }
@@ -29,15 +29,15 @@ namespace THHHMinhHieu.DocGhiFile
                 Console.WriteLine(e.Message);
             }
         }
-        public void GhiFile(ArrayList arrayList)
+        public static void GhiFile(ArrayList arrayList)
         {
             try
             {
                 using (StreamWriter streamWriter = new StreamWriter(filepath))
                 {
-                    foreach (TinhLuong tinhLuong in arrayList)
+                    foreach (NhanVien nhanVien in arrayList)
                     {
-                        streamWriter.WriteLine(tinhLuong.ToString());
+                        streamWriter.WriteLine(nhanVien.ToString());
                     }
                 }
             }
